@@ -75,7 +75,7 @@
 
      <hr class="sidebar-divider">
      <div class="sidebar-heading">
-         Students
+         Murid
      </div>
      </li>
      <li class="nav-item">
