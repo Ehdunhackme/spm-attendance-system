@@ -1,1 +1,1 @@
-  <title>AMS - Dashboard</title>
+  <title>Admin-Sistem Kehadiran Hari Sukan Sekolah</title>

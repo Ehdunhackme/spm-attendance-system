@@ -124,10 +124,10 @@ if(isset($_POST['save'])){
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Create Class</h1>
+            <h1 class="h3 mb-0 text-gray-800">Membina Kelas Bahuru</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Create Class</li>
+              <li class="breadcrumb-item"><a href="./">Laman Utama</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Membina Kelas Baharu</li>
             </ol>
           </div>
 
@@ -136,7 +136,7 @@ if(isset($_POST['save'])){
               <!-- Form Basic -->
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Create Class</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Membina Kelas Baharu</h6>
                     <?php echo $statusMsg; ?>
                 </div>
                 <div class="card-body">

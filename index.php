@@ -32,7 +32,6 @@ session_start();
                                 <div class="login-form">
                                     <h5 align="center">SISTEM KEHADIRAN HARI SUKAN SEKOLAH</h5>
                                     <div class="text-center">
-                                        <style="width:100px;height:100px">
                                         <br> <br>
                                         <h1 class="h4 text-gray-900 mb-4">Panel Log Masuk</h1>
                                     </div>
@@ -116,12 +115,12 @@ session_start();
                                                     </script>";
                                                 } else {
                                                     echo "<div class='alert alert-danger' role='alert'>
-                                                    Invalid Username/Password!
+                                                    Nama Pengguna/Kata Laluan Tidak Sah!
                                                     </div>";
                                                 }
                                             } else {
                                                 echo "<div class='alert alert-danger' role='alert'>
-                                                Invalid Username/Password!
+                                                Nama Pengguna/Kata Laluan Tidak Sah!
                                                 </div>";
                                             }
                                         }
@@ -152,5 +151,4 @@ session_start();
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/ruang-admin.min.js"></script>
 </body>
-
 </html>

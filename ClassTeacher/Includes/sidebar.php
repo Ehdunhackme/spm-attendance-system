@@ -8,7 +8,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Menu</span></a>
       </li> 
       <hr class="sidebar-divider">
       <div class="sidebar-heading">

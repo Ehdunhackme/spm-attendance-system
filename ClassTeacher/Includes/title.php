@@ -1,1 +1,1 @@
-  <title>AMS - Dashboard</title>
+  <title>Murid-Sistem Kehadiran Hari Sukan Sekolah</title>

@@ -8,21 +8,21 @@
      <li class="nav-item active">
          <a class="nav-link" href="index.php">
              <i class="fas fa-fw fa-tachometer-alt"></i>
-             <span>Dashboard</span></a>
+             <span>Menu</span></a>
      </li>
      <hr class="sidebar-divider">
      <div class="sidebar-heading">
-         Class and Class Arms
+         Kelas
      </div>
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap" aria-expanded="true" aria-controls="collapseBootstrap">
              <i class="fas fa-chalkboard"></i>
-             <span>Manage Classeshello</span>
+             <span>Urus Kelas</span>
          </a>
          <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <h6 class="collapse-header">Manage Classes</h6>
-                 <a class="collapse-item" href="createClass.php">Create Class</a>
+                 <h6 class="collapse-header">Urus Kelas</h6>
+                 <a class="collapse-item" href="createClass.php">Membina Kelas Baharu</a>
                  <!-- <a class="collapse-item" href="#">Member List</a> -->
              </div>
          </div>
@@ -42,17 +42,17 @@
      </li>
      <hr class="sidebar-divider">
      <div class="sidebar-heading">
-         Teachers
+         Guru
      </div>
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrapassests" aria-expanded="true" aria-controls="collapseBootstrapassests">
              <i class="fas fa-chalkboard-teacher"></i>
-             <span>Manage Teachers</span>
+             <span>Urus Guru</span>
          </a>
          <div id="collapseBootstrapassests" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <h6 class="collapse-header">Manage Class Teachers</h6>
-                 <a class="collapse-item" href="createClassTeacher.php">Create Class Teachers</a>
+                 <h6 class="collapse-header">Urus guru</h6>
+                 <a class="collapse-item" href="createClassTeacher.php">Membuat Akaun Guru Baharu</a>
                  <!-- <a class="collapse-item" href="assetsCategoryList.php">Assets Category List</a>
              <a class="collapse-item" href="createAssets.php">Create Assets</a> -->
              </div>
@@ -81,13 +81,13 @@
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2" aria-expanded="true" aria-controls="collapseBootstrap2">
              <i class="fas fa-user-graduate"></i>
-             <span>Manage Students</span>
+             <span>Urus Murid</span>
          </a>
          <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <h6 class="collapse-header">Manage Students</h6>
-                 <a class="collapse-item" href="createStudents.php">Create Students</a>
-                 <a class="collapse-item" href="downloadRecord.php">Today's Report (xls)</a>
+                 <h6 class="collapse-header">Urus Murid</h6>
+                 <a class="collapse-item" href="createStudents.php">Membina Akaun Murid Baharu</a>
+                 <a class="collapse-item" href="downloadRecord.php">Mencetak Laporan Excel</a>
                  <!-- <a class="collapse-item" href="#">Assets Type</a> -->
              </div>
          </div>

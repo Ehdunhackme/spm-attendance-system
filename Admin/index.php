@@ -27,7 +27,7 @@ include '../Includes/session.php';
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="img/logo/attnlg.png" rel="icon">
-  <title>Dashboard</title>
+  <title>Admin-Sistem Kehadiran Hari Sukan Murid</title>
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
@@ -48,8 +48,8 @@ include '../Includes/session.php';
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Laman Utama Akaun Admin</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+              <li class="breadcrumb-item"><a href="./">Laman Utama</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Menu</li>
             </ol>
           </div>
 
