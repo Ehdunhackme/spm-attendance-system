@@ -87,7 +87,7 @@
              <div class="bg-white py-2 collapse-inner rounded">
                  <h6 class="collapse-header">Urus Murid</h6>
                  <a class="collapse-item" href="createStudents.php">Membina Akaun Murid Baharu</a>
-                 <a class="collapse-item" href="downloadRecord.php">Mencetak Laporan Excel</a>
+                 <a class="collapse-item" href="downloadRecord.php">Import Excel File</a>
                  <!-- <a class="collapse-item" href="#">Assets Type</a> -->
              </div>
          </div>

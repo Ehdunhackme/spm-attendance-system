@@ -1,70 +1,57 @@
-<?php 
-error_reporting(0);
+<?php
+// Include necessary files and establish database connection
 include '../Includes/dbcon.php';
 include '../Includes/session.php';
 
+// Check if a file is uploaded
+if(isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+    // Get the uploaded file
+    $file = $_FILES['file']['tmp_name'];
+
+    // Load PHPExcel library (assuming you have it installed)
+    require_once 'PHPExcel/PHPExcel.php';
+
+    // Create a new PHPExcel object
+    $objPHPExcel = PHPExcel_IOFactory::load($file);
+
+    // Get the active sheet
+    $sheet = $objPHPExcel->getActiveSheet();
+
+    // Start from the second row (assuming the first row contains headers)
+    $startRow = 2;
+
+    // Loop through each row of the sheet
+    for($i = $startRow; $i <= $sheet->getHighestRow(); $i++) {
+        // Get row data
+        $rowData = $sheet->rangeToArray('A' . $i . ':K' . $i, NULL, TRUE, FALSE)[0];
+
+        // Insert row data into the database
+        $firstName = $rowData[1];
+        $lastName = $rowData[2];
+        $otherName = $rowData[3];
+        $admissionNumber = $rowData[4];
+        $className = $rowData[5];
+        $classArmName = $rowData[6];
+        $sessionName = $rowData[7];
+        $termName = $rowData[8];
+        $status = ($rowData[9] == "Present") ? 1 : 0;
+        $dateTimeTaken = $rowData[10];
+
+        // Perform your database insertion here
+        // Example query:
+        $query = "INSERT INTO tblattendance (status, dateTimeTaken, classId, classArmId, sessionTermId, admissionNo)
+                  VALUES ('$status', '$dateTimeTaken', 
+                          (SELECT Id FROM tblclass WHERE className = '$className'), 
+                          (SELECT Id FROM tblclassarms WHERE classArmName = '$classArmName'), 
+                          (SELECT Id FROM tblsessionterm WHERE sessionName = '$sessionName' AND termId = (SELECT Id FROM tblterm WHERE termName = '$termName')), 
+                          '$admissionNumber')";
+        mysqli_query($conn, $query);
+    }
+
+    // Redirect or display a success message
+    echo "Data imported successfully!";
+} else {
+    // Handle file upload errors
+    echo "File upload failed.";
+}
 ?>
-        <table border="1">
-        <thead>
-            <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Other Name</th>
-            <th>Admission No</th>
-            <th>Class</th>
-            <th>Class Arm</th>
-            <th>Session</th>
-            <th>Term</th>
-            <th>Status</th>
-            <th>Date</th>
-            </tr>
-        </thead>
-
-<?php 
-$filename="Attendance list";
-$dateTaken = date("Y-m-d");
-
-$cnt=1;			
-$ret = mysqli_query($conn,"SELECT tblattendance.Id,tblattendance.status,tblattendance.dateTimeTaken,tblclass.className,
-        tblclassarms.classArmName,tblsessionterm.sessionName,tblsessionterm.termId,tblterm.termName,
-        tblstudents.firstName,tblstudents.lastName,tblstudents.otherName,tblstudents.admissionNumber
-        FROM tblattendance
-        INNER JOIN tblclass ON tblclass.Id = tblattendance.classId
-        INNER JOIN tblclassarms ON tblclassarms.Id = tblattendance.classArmId
-        INNER JOIN tblsessionterm ON tblsessionterm.Id = tblattendance.sessionTermId
-        INNER JOIN tblterm ON tblterm.Id = tblsessionterm.termId
-        INNER JOIN tblstudents ON tblstudents.admissionNumber = tblattendance.admissionNo
-        where tblattendance.dateTimeTaken = '$dateTaken' and tblattendance.classId = '$_SESSION[classId]' and tblattendance.classArmId = '$_SESSION[classArmId]'");
-
-if(mysqli_num_rows($ret) > 0 )
-{
-while ($row=mysqli_fetch_array($ret)) 
-{ 
-    
-    if($row['status'] == '1'){$status = "Present"; $colour="#00FF00";}else{$status = "Absent";$colour="#FF0000";}
-
-echo '  
-<tr>  
-<td>'.$cnt.'</td> 
-<td>'.$firstName= $row['firstName'].'</td> 
-<td>'.$lastName= $row['lastName'].'</td> 
-<td>'.$otherName= $row['otherName'].'</td> 
-<td>'.$admissionNumber= $row['admissionNumber'].'</td> 
-<td>'.$className= $row['className'].'</td> 
-<td>'.$classArmName=$row['classArmName'].'</td>	
-<td>'.$sessionName=$row['sessionName'].'</td>	 
-<td>'.$termName=$row['termName'].'</td>	
-<td>'.$status=$status.'</td>	 	
-<td>'.$dateTimeTaken=$row['dateTimeTaken'].'</td>	 					
-</tr>  
-';
-header("Content-type: application/octet-stream");
-header("Content-Disposition: attachment; filename=".$filename."-report.xls");
-header("Pragma: no-cache");
-header("Expires: 0");
-			$cnt++;
-			}
-	}
-?>
-</table>

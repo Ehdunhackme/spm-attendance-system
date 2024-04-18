@@ -133,7 +133,11 @@ session_start();
                     <a href="index.html" class="btn btn-facebook btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                     </a> -->
-
+                                        <!-- Register Link -->
+                                        <div class="text-center">
+                                            <a class="small" href="register.php">Belum mempunyai akaun? Daftar di sini!</a>
+                                        </div>
+                                    </form>
 
                                     <div class="text-center">
                                     </div>
