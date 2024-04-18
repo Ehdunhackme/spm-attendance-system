@@ -28,10 +28,28 @@ if(isset($_POST['register'])) {
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>SISTEM KEHADIRAN HARI SUKAN SEKOLAH
+        Register</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
-
+<style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .card-title {
+            text-align: center;
+        }
+        .btn-primary {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
 <body>
     <div class="container">
         <div class="row justify-content-center">
