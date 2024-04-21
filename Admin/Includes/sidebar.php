@@ -27,19 +27,6 @@
              </div>
          </div>
      </li>
-     <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrapusers" aria-expanded="true" aria-controls="collapseBootstrapusers">
-             <i class="fas fa-code-branch"></i>
-             <span>Manage Class Arms</span>
-         </a>
-         <div id="collapseBootstrapusers" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <h6 class="collapse-header">Manage Class Arms</h6>
-                 <a class="collapse-item" href="createClassArms.php">Create Class Arms</a>
-                 <!-- <a class="collapse-item" href="usersList.php">User List</a> -->
-             </div>
-         </div>
-     </li>
      <hr class="sidebar-divider">
      <div class="sidebar-heading">
          Guru
@@ -51,8 +38,10 @@
          </a>
          <div id="collapseBootstrapassests" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                 <h6 class="collapse-header">Urus guru</h6>
-                 <a class="collapse-item" href="createClassTeacher.php">Membuat Akaun Guru Baharu</a>
+                 <h6 class="collapse-header">Urus Murid</h6>
+                 <a class="collapse-item" href="createClassTeacher.php">Membuat Akaun Murid Baharu</a>
+                 <a class="collapse-item" href="senaraimurid.php">Senarai Akaun Murid</a>
+                 <a class="collapse-item" href="createStudents.php">Membina Akaun Murid Baharu</a>
                  <!-- <a class="collapse-item" href="assetsCategoryList.php">Assets Category List</a>
              <a class="collapse-item" href="createAssets.php">Create Assets</a> -->
              </div>
@@ -72,26 +61,6 @@
           </div>
         </div>
       </li> -->
-
-     <hr class="sidebar-divider">
-     <div class="sidebar-heading">
-         Murid
-     </div>
-     </li>
-     <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2" aria-expanded="true" aria-controls="collapseBootstrap2">
-             <i class="fas fa-user-graduate"></i>
-             <span>Urus Murid</span>
-         </a>
-         <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 <h6 class="collapse-header">Urus Murid</h6>
-                 <a class="collapse-item" href="createStudents.php">Membina Akaun Murid Baharu</a>
-                 <a class="collapse-item" href="downloadRecord.php">Import Excel File</a>
-                 <!-- <a class="collapse-item" href="#">Assets Type</a> -->
-             </div>
-         </div>
-     </li>
                  <!-- <a class="collapse-item" href="addMemberToContLevel.php ">Add Member to Level</a> -->
      <!-- <li class="nav-item">
         <a class="nav-link" href="forms.html">
