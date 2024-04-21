@@ -10,21 +10,8 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Menu</span></a>
       </li> 
-      <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-        Ahli
-      </div>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
-          aria-expanded="true" aria-controls="collapseBootstrap2">
-          <i class="fas fa-user-graduate"></i>
-          <span>Urus Ahli</span>
-        </a>
         <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Manage Students</h6>
-            <a class="collapse-item" href="viewStudents.php">View Students</a>
             <!-- <a class="collapse-item" href="#">Assets Type</a> -->
           </div>
         </div>
@@ -44,8 +31,6 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Manage Attendance</h6>
             <a class="collapse-item" href="takeAttendance.php">Take Attendance</a>
-            <a class="collapse-item" href="viewAttendance.php">View Class Attendance</a>
-            <a class="collapse-item" href="viewStudentAttendance.php">View Student Attendance</a>
             <!-- <a class="collapse-item" href="addMemberToContLevel.php ">Add Member to Level</a> -->
           </div>
         </div>

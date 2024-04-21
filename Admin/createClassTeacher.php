@@ -8,7 +8,7 @@ include '../Includes/session.php';
 
 if(isset($_POST['save'])){
     
-    $firstName=$_POST['firstName'];
+  $firstName=$_POST['firstName'];
   $lastName=$_POST['lastName'];
   $emailAddress=$_POST['emailAddress'];
 
