@@ -29,19 +29,19 @@
      </li>
      <hr class="sidebar-divider">
      <div class="sidebar-heading">
-         Guru
+         Murid
      </div>
      <li class="nav-item">
          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrapassests" aria-expanded="true" aria-controls="collapseBootstrapassests">
              <i class="fas fa-chalkboard-teacher"></i>
-             <span>Urus Guru</span>
+             <span>Urus Murid</span>
          </a>
          <div id="collapseBootstrapassests" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                  <h6 class="collapse-header">Urus Murid</h6>
-                 <a class="collapse-item" href="createClassTeacher.php">Membuat Akaun Murid Baharu</a>
-                 <a class="collapse-item" href="senaraimurid.php">Senarai Akaun Murid</a>
-                 <a class="collapse-item" href="createStudents.php">Membina Akaun Murid Baharu</a>
+                 <a class="collapse-item" href="createClassTeacher.php">Membuat Akaun <br> Murid Baharu</a>
+                 <a class="collapse-item" href="senaraimurid.php">Senarai Akaun <br> Murid</a>
+                 <a class="collapse-item" href="createStudents.php">Masuk Maklumat <br> Murid Baharu</a>
                  <!-- <a class="collapse-item" href="assetsCategoryList.php">Assets Category List</a>
              <a class="collapse-item" href="createAssets.php">Create Assets</a> -->
              </div>

@@ -31,12 +31,12 @@ if(isset($_POST['save'])){
 
     if ($query) {
         
-        $statusMsg = "<div class='alert alert-success'  style='margin-right:700px;'>Created Successfully!</div>";
+        $statusMsg = "<div class='alert alert-success'  style='margin-right:700px;'>Masuk Berjaya</div>";
             
     }
     else
     {
-         $statusMsg = "<div class='alert alert-danger' style='margin-right:700px;'>An error Occurred!</div>";
+         $statusMsg = "<div class='alert alert-danger' style='margin-right:700px;'>Ralat Berlaku!</div>";
     }
   }
 }
@@ -104,7 +104,7 @@ if(isset($_POST['save'])){
         }
         else{
 
-            $statusMsg = "<div class='alert alert-danger' style='margin-right:700px;'>An error Occurred!</div>"; 
+            $statusMsg = "<div class='alert alert-danger' style='margin-right:700px;'>Ralat Berlaku!</div>"; 
          }
       
   }
@@ -168,10 +168,10 @@ if(isset($_POST['save'])){
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Create Students</h1>
+            <h1 class="h3 mb-0 text-gray-800">Masuk Maklumat Murid Baharu</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Create Students</li>
+              <li class="breadcrumb-item"><a href="./">Menu</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Masuk Maklumat Murid Baharu</li>
             </ol>
           </div>
 
@@ -180,34 +180,34 @@ if(isset($_POST['save'])){
               <!-- Form Basic -->
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Create Students</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Masuk Maklumat Murid Baharu</h6>
                     <?php echo $statusMsg; ?>
                 </div>
                 <div class="card-body">
                   <form method="post">
                    <div class="form-group row mb-3">
                         <div class="col-xl-6">
-                        <label class="form-control-label">Firstname<span class="text-danger ml-2">*</span></label>
+                        <label class="form-control-label">Nama Pertama<span class="text-danger ml-2">*</span></label>
                         <input type="text" class="form-control" name="firstName" value="<?php echo $row['firstName'];?>" id="exampleInputFirstName" >
                         </div>
                         <div class="col-xl-6">
-                        <label class="form-control-label">Lastname<span class="text-danger ml-2">*</span></label>
+                        <label class="form-control-label">Nama Terakhir<span class="text-danger ml-2">*</span></label>
                       <input type="text" class="form-control" name="lastName" value="<?php echo $row['lastName'];?>" id="exampleInputFirstName" >
                         </div>
                     </div>
                      <div class="form-group row mb-3">
                         <div class="col-xl-6">
-                        <label class="form-control-label">Other Name<span class="text-danger ml-2">*</span></label>
+                        <label class="form-control-label">Nama Lain<span class="text-danger ml-2">*</span></label>
                         <input type="text" class="form-control" name="otherName" value="<?php echo $row['otherName'];?>" id="exampleInputFirstName" >
                         </div>
                         <div class="col-xl-6">
-                        <label class="form-control-label">Admission Number<span class="text-danger ml-2">*</span></label>
+                        <label class="form-control-label">ID Sekolah<span class="text-danger ml-2">*</span></label>
                       <input type="text" class="form-control" required name="admissionNumber" value="<?php echo $row['admissionNumber'];?>" id="exampleInputFirstName" >
                         </div>
                     </div>
                     <div class="form-group row mb-3">
                         <div class="col-xl-6">
-                        <label class="form-control-label">Select Class<span class="text-danger ml-2">*</span></label>
+                        <label class="form-control-label">Memilih Kelas<span class="text-danger ml-2">*</span></label>
                          <?php
                         $qry= "SELECT * FROM tblclass ORDER BY className ASC";
                         $result = $conn->query($qry);
@@ -221,12 +221,6 @@ if(isset($_POST['save'])){
                                   echo '</select>';
                               }
                             ?>  
-                        </div>
-                        <div class="col-xl-6">
-                        <label class="form-control-label">Class Arm<span class="text-danger ml-2">*</span></label>
-                            <?php
-                                echo"<div id='txtHint'></div>";
-                            ?>
                         </div>
                     </div>
                       <?php
@@ -251,20 +245,19 @@ if(isset($_POST['save'])){
               <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">All Student</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Senarai Murid</h6>
                 </div>
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                     <thead class="thead-light">
                       <tr>
                         <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Other Name</th>
-                        <th>Admission No</th>
-                        <th>Class</th>
-                        <th>Class Arm</th>
-                        <th>Date Created</th>
+                        <th>Nama Pertama</th>
+                        <th>Nama Terakhir</th>
+                        <th>Nama Lain</th>
+                        <th>ID Sekolah</th>
+                        <th>Kelas</th>
+                        <th>Tarikh Dibuat</th>
                          <th>Edit</th>
                         <th>Delete</th>
                       </tr>
@@ -273,7 +266,7 @@ if(isset($_POST['save'])){
                     <tbody>
 
                   <?php
-                      $query = "SELECT tblstudents.Id,tblclass.className,tblclassarms.classArmName,tblclassarms.Id AS classArmId,tblstudents.firstName,
+                      $query = "SELECT tblstudents.Id,tblclass.className,tblclassarms.Id AS classArmId,tblstudents.firstName,
                       tblstudents.lastName,tblstudents.otherName,tblstudents.admissionNumber,tblstudents.dateCreated
                       FROM tblstudents
                       INNER JOIN tblclass ON tblclass.Id = tblstudents.classId
@@ -295,7 +288,6 @@ if(isset($_POST['save'])){
                                 <td>".$rows['otherName']."</td>
                                 <td>".$rows['admissionNumber']."</td>
                                 <td>".$rows['className']."</td>
-                                <td>".$rows['classArmName']."</td>
                                  <td>".$rows['dateCreated']."</td>
                                 <td><a href='?action=edit&Id=".$rows['Id']."'><i class='fas fa-fw fa-edit'></i></a></td>
                                 <td><a href='?action=delete&Id=".$rows['Id']."'><i class='fas fa-fw fa-trash'></i></a></td>

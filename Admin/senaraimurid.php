@@ -38,24 +38,34 @@ $num = $rs->num_rows;
         <?php include "Includes/topbar.php"; ?>
         <!-- Container Fluid -->
         <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Senarai Akaun Murid</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./">Menu</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Senarai Akaun Murid</li>
+            </ol>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+        <div class="container-fluid" id="container-wrapper">
           <div class="row">
             <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Student List</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Senarai Akaun Murid</h6>
                 </div>
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                     <thead class="thead-light">
                       <tr>
                         <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email Address</th>
-                        <th>Phone No</th>
-                        <th>Class</th>
-                        <th>Date Created</th>
-                        <th>Delete</th>
+                        <th>Nama Pertama</th>
+                        <th>Nama Terakhir</th>
+                        <th>Alamat Emel</th>
+                        <th>Nombor Telefon</th>
+                        <th>Kelas</th>
+                        <th>Tarikh Dibuat</th>
+                        <th>Padam</th>
                       </tr>
                     </thead>
                     <tbody>

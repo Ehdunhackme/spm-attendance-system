@@ -227,7 +227,7 @@ if(isset($_POST['save'])){
                         $num = $result->num_rows;		
                         if ($num > 0){
                           echo ' <select required name="classId" onchange="classArmDropdown(this.value)" class="form-control mb-3">';
-                          echo'<option value="">--Select Class--</option>';
+                          echo'<option value="">--Pilih Kelas--</option>';
                           while ($rows = $result->fetch_assoc()){
                           echo'<option value="'.$rows['Id'].'" >'.$rows['className'].'</option>';
                               }
