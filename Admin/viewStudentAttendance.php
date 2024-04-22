@@ -1,11 +1,7 @@
-
 <?php 
 error_reporting(0);
 include '../Includes/dbcon.php';
 include '../Includes/session.php';
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +40,10 @@ include '../Includes/session.php';
         xmlhttp.open("GET","ajaxCallTypes.php?tid="+str,true);
         xmlhttp.send();
     }
+}
+
+function printAttendance() {
+    window.print();
 }
 </script>
 
@@ -121,6 +121,8 @@ include '../Includes/session.php';
                         </div>
                     </div> -->
                     <button type="submit" name="view" class="btn btn-primary">View Attendance</button>
+                    <!-- Add the print button -->
+                    <button type="button" class="btn btn-success" onclick="printAttendance()">Print Attendance</button>
                   </form>
                 </div>
               </div>

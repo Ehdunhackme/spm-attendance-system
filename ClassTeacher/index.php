@@ -1,20 +1,28 @@
-
 <?php 
 include '../Includes/dbcon.php';
 include '../Includes/session.php';
 
+// Set timezone to GMT+8
+date_default_timezone_set('Asia/Kuala_Lumpur');
 
-    $query = "SELECT tblclass.className,tblclassarms.classArmName 
-    FROM tblclassteacher
-    INNER JOIN tblclass ON tblclass.Id = tblclassteacher.classId
-    INNER JOIN tblclassarms ON tblclassarms.Id = tblclassteacher.classArmId
-    Where tblclassteacher.Id = '$_SESSION[userId]'";
+// Get current time in GMT+8 timezone
+$current_time = date('H:i');
 
-    $rs = $conn->query($query);
-    $num = $rs->num_rows;
-    $rrw = $rs->fetch_assoc();
+$query = "SELECT tblclassteacher.firstName, tblclassteacher.lastName
+FROM tblclassteacher
+INNER JOIN tblclass ON tblclass.Id = tblclassteacher.classId
+INNER JOIN tblclassarms ON tblclassarms.Id = tblclassteacher.classArmId
+WHERE tblclassteacher.Id = '".$_SESSION['userId']."'";
 
+$rs = $conn->query($query);
+$num = $rs->num_rows;
 
+// Get full name
+$fullName = "";
+if ($num > 0) {
+    $row = $rs->fetch_assoc();
+    $fullName = $row['firstName'] . " " . $row['lastName'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,12 +44,12 @@ include '../Includes/session.php';
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
-   <?php include "Includes/sidebar.php";?>
+    <?php include "Includes/sidebar.php";?>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- TopBar -->
-           <?php include "Includes/topbar.php";?>
+        <?php include "Includes/topbar.php";?>
         <!-- Topbar -->
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
@@ -52,115 +60,12 @@ include '../Includes/session.php';
               <li class="breadcrumb-item active" aria-current="page">Menu</li>
             </ol>
           </div>
-
+          <span class="text-black big" style="font-size: 24px;"><b>Selamat Datang <?php echo $fullName;?></b></span><br>
+          <span class="text-black big" style="font-size: 24px;">Current Time: <?php echo $current_time;?> (GMT+8)</span>
           <div class="row mb-3">
-          <!-- New User Card Example -->
-          <?php 
-$query1=mysqli_query($conn,"SELECT * from tblstudents where classId = '$_SESSION[classId]' and classArmId = '$_SESSION[classArmId]'");                       
-$students = mysqli_num_rows($query1);
-?>
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Students</div>
-                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $students;?></div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <!-- <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
-                        <span>Since last month</span> -->
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-users fa-2x text-info"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Earnings (Monthly) Card Example -->
-             <?php 
-$query1=mysqli_query($conn,"SELECT * from tblclass");                       
-$class = mysqli_num_rows($query1);
-?>
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Classes</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $class;?></div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <!-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span>Since last month</span> -->
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-chalkboard fa-2x text-primary"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Earnings (Annual) Card Example -->
-             <?php 
-$query1=mysqli_query($conn,"SELECT * from tblclassarms");                       
-$classArms = mysqli_num_rows($query1);
-?>
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Class Arms</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $classArms;?></div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <!-- <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                        <span>Since last years</span> -->
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-code-branch fa-2x text-success"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Pending Requests Card Example -->
-            <?php 
-$query1=mysqli_query($conn,"SELECT * from tblattendance where classId = '$_SESSION[classId]' and classArmId = '$_SESSION[classArmId]'");                       
-$totAttendance = mysqli_num_rows($query1);
-?>
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Total Student Attendance</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totAttendance;?></div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <!-- <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                        <span>Since yesterday</span> -->
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-warning"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-          <!--Row-->
-
-          <!-- <div class="row">
-            <div class="col-lg-12 text-center">
-              <p>Do you like this template ? you can download from <a href="https://github.com/indrijunanda/RuangAdmin"
-                  class="btn btn-primary btn-sm" target="_blank"><i class="fab fa-fw fa-github"></i>&nbsp;GitHub</a></p>
-            </div>
-          </div> -->
-
+             <div class="col-lg-3 col-md-6 mb-4 mt-4">
+            <a class="btn btn-primary btn-block" href="takeAttendance.php">Mengambil Kehadiran</a>
+          </div>
         </div>
         <!---Container Fluid-->
       </div>

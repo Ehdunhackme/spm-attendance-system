@@ -18,19 +18,19 @@
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-      Attendance
+      Kehadiran
       </div>
       </li>
        <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrapcon"
           aria-expanded="true" aria-controls="collapseBootstrapcon">
           <i class="fa fa-calendar-alt"></i>
-          <span>Manage Attendance</span>
+          <span>Menguruskan Kehadiran</span>
         </a>
         <div id="collapseBootstrapcon" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Manage Attendance</h6>
-            <a class="collapse-item" href="takeAttendance.php">Take Attendance</a>
+            <h6 class="collapse-header">Menguruskan Kehadiran</h6>
+            <a class="collapse-item" href="takeAttendance.php">Mengambil Kehadiran</a>
             <!-- <a class="collapse-item" href="addMemberToContLevel.php ">Add Member to Level</a> -->
           </div>
         </div>
