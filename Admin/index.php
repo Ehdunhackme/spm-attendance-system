@@ -15,17 +15,18 @@ INNER JOIN tblclassarms ON tblclassarms.Id = tblclassteacher.classArmId
 WHERE tblclassteacher.Id = '".$_SESSION['userId']."'";
 
 $rs = $conn->query($query);
-$num = $rs->num_rows;
-$rrw = $rs->fetch_assoc();
 
-// Get full name
-$fullName = "";
+// Check if query was successful
 if ($rs && $rs->num_rows > 0) {
+    // Fetch only once
     $row = $rs->fetch_assoc();
+    // Get full name
     $fullName = $row['firstName'] . " " . $row['lastName'];
+} else {
+    // Handle the case where no rows are returned
+    $fullName = "Unknown"; // Or any other default value
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
