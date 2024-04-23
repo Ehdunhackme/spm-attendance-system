@@ -71,7 +71,7 @@ if ($rs && $rs->num_rows > 0) {
 
         <form action="importSimpan.php" method="post" enctype="multipart/form-data">
             <input type="file" name="file" accept=".csv"><br>
-            <<a class="btn btn-primary btn-block" button type="submit" name="import">UPLOAD</button>
+            <button type="submit" name="import">UPLOAD</button>
         </form>
         <br>
 
