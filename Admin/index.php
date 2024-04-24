@@ -67,7 +67,7 @@ if ($rs && $rs->num_rows > 0) {
           <div class="row mb-3">
             <div class="col-lg-12">
             <span class="d-none d-lg-inline text-black big" style="font-size: 24px;"><b>Selamat Datang <?php echo $fullName;?></b></span><br>
-            <span class="d-none d-lg-inline text-black big" style="font-size: 24px;">Current Time: <?php echo $current_time;?> (GMT+8)</span>
+            <span class="d-none d-lg-inline text-black big" style="font-size: 24px;">Masa Sekarang: <?php echo $current_time;?> (GMT+8)</span>
             </div>
           </div>
 

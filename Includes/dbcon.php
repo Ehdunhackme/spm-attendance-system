@@ -8,9 +8,7 @@
 	if($conn->connect_error){
 		echo "Seems like you have not configured the database. Failed To Connect to database:" . $conn->connect_error;
 	}
-?>
 
-<?php
 // Database connection details
 $host = 'localhost'; // or your database host
 $username = 'root'; // database username
@@ -31,4 +29,3 @@ function OpenCon() {
 function CloseCon($conn) {
     $conn->close();
 }
-?>

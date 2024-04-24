@@ -43,8 +43,7 @@
                  <a class="collapse-item" href="senaraimurid.php">Senarai Akaun <br> Murid</a>
                  <a class="collapse-item" href="createStudents.php">Masuk Maklumat <br> Murid Baharu</a>
                  <a class="collapse-item" href="importAhli.php">Import Murid</a>
-                 <a class="collapse-item" href="viewAttendance.php">View Class Attendance</a>
-                <a class="collapse-item" href="viewStudentAttendance.php">View Student Attendance</a>
+                <a class="collapse-item" href="viewStudentAttendance.php">Papar Kehadiran Murid</a>
                  <!-- <a class="collapse-item" href="assetsCategoryList.php">Assets Category List</a>
              <a class="collapse-item" href="createAssets.php">Create Assets</a> -->
              </div>

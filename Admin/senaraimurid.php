@@ -74,6 +74,7 @@ $num = $rs->num_rows;
                         $sn = 0;
                         while ($rows = $rs->fetch_assoc()) {
                           $sn++;
+                          var_dump($rows);
                           echo "<tr>
                                   <td>$sn</td>
                                   <td>{$rows['firstName']}</td>

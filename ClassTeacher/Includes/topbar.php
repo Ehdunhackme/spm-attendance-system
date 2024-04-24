@@ -1,5 +1,4 @@
 <?php 
-include '../Includes/dbcon.php';
 
 // Set timezone to GMT+8
 date_default_timezone_set('Asia/Kuala_Lumpur');

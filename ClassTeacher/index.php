@@ -1,6 +1,6 @@
 <?php 
-include '../Includes/dbcon.php';
-include '../Includes/session.php';
+require_once '../Includes/dbcon.php';
+require_once '../Includes/session.php';
 
 // Set timezone to GMT+8
 date_default_timezone_set('Asia/Kuala_Lumpur');
@@ -61,7 +61,7 @@ if ($num > 0) {
             </ol>
           </div>
           <span class="text-black big" style="font-size: 24px;"><b>Selamat Datang <?php echo $fullName;?></b></span><br>
-          <span class="text-black big" style="font-size: 24px;">Current Time: <?php echo $current_time;?> (GMT+8)</span>
+          <span class="text-black big" style="font-size: 24px;">Masa Sekarang: <?php echo $current_time;?> (GMT+8)</span>
           <div class="row mb-3">
              <div class="col-lg-3 col-md-6 mb-4 mt-4">
             <a class="btn btn-primary btn-block" href="takeAttendance.php">Mengambil Kehadiran</a>
